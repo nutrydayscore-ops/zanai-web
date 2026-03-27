@@ -1,10 +1,21 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zanai</title>
 
+<title>Zanai | Entiende lo que comes</title>
+
+<meta name="description" content="Escanea productos y descubre aditivos, ingredientes y la verdad nutricional en segundos con Zanai.">
+
+<!-- Open Graph (para compartir) -->
+<meta property="og:title" content="Zanai | Entiende lo que comes">
+<meta property="og:description" content="Descubre lo que realmente estás comiendo en segundos.">
+<meta property="og:image" content="logo.png">
+<meta property="og:type" content="website">
+
+<!-- Font -->
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
@@ -24,54 +35,78 @@ body {
   color:var(--text);
 }
 
+/* NAV */
 nav {
   display:flex;
-  justify-content:space-between;
-  padding:20px 40px;
+  justify-content:center;
+  padding:25px;
   border-bottom:1px solid var(--border);
 }
 
 .logo {
-  width:70px;
+  width:110px;
 }
 
+/* HERO */
 .hero {
   text-align:center;
-  padding:100px 20px;
+  padding:90px 20px 60px;
 }
 
 h1 {
-  font-size:clamp(40px,6vw,70px);
+  font-size:clamp(42px,6vw,72px);
   font-weight:800;
+  letter-spacing:-1px;
 }
 
 .sub {
   margin-top:20px;
   color:var(--muted);
+  font-size:18px;
+  max-width:520px;
+  margin-left:auto;
+  margin-right:auto;
 }
 
 .cta {
   margin-top:30px;
   display:inline-block;
-  padding:16px 30px;
+  padding:16px 32px;
   border-radius:14px;
   background:linear-gradient(135deg,#93D536,#7fc22d);
   text-decoration:none;
   color:#1a1a1a;
   font-weight:700;
+  box-shadow:0 10px 25px rgba(147,213,54,0.3);
+  transition:0.25s;
 }
 
-.strip {
-  background:#f8fafc;
+.cta:hover {
+  transform:translateY(-3px);
+  box-shadow:0 20px 40px rgba(147,213,54,0.35);
+}
+
+.note {
+  margin-top:10px;
+  color:var(--muted);
+  font-size:13px;
+}
+
+/* IMPACT */
+.impact {
   text-align:center;
-  padding:20px;
-  border-top:1px solid var(--border);
-  border-bottom:1px solid var(--border);
+  padding:70px 20px;
+  background:#f8fafc;
 }
 
+.impact h2 {
+  font-size:30px;
+}
+
+/* FEATURES */
 .features {
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
   gap:20px;
   padding:80px 20px;
   max-width:1000px;
@@ -88,19 +123,22 @@ h1 {
 }
 
 .card:hover {
-  transform:translateY(-5px);
+  transform:translateY(-6px);
   box-shadow:0 20px 50px rgba(0,0,0,0.1);
+  border-color:#93d536;
 }
 
+/* FINAL CTA */
 .final {
   text-align:center;
   padding:100px 20px;
 }
 
 .final h2 {
-  font-size:40px;
+  font-size:36px;
 }
 
+/* FOOTER */
 footer {
   text-align:center;
   padding:30px;
@@ -108,36 +146,74 @@ footer {
 }
 
 </style>
+
 </head>
 
 <body>
 
+<!-- NAV -->
 <nav>
-  <img src="logo.png" class="logo">
+  <img src="logo.png" class="logo" alt="Zanai logo">
 </nav>
 
+<!-- HERO -->
 <div class="hero">
   <h1>Entiende lo que comes 🧠</h1>
-  <p class="sub">Escanea productos y descubre sus aditivos e información nutricional en segundos</p>
-  <a href="#" class="cta">Descargar app 🚀</a>
+
+  <p class="sub">
+    Escanea productos y descubre aditivos, ingredientes y la verdad nutricional en segundos.
+  </p>
+
+  <a href="https://play.google.com/store/apps/details?id=com.goespinoza.nutriapp" class="cta">
+    Descargar en Android 🚀
+  </a>
+
+  <div class="note">Disponible en Android</div>
 </div>
 
-<div class="strip">
-  Solo escaneando el código de barras ves TODO lo que contiene un producto
+<!-- IMPACT -->
+<div class="impact">
+  <h2>
+    Lo que parece sano…<br>
+    muchas veces no lo es 👀
+  </h2>
 </div>
 
+<!-- FEATURES -->
 <div class="features">
-  <div class="card">📦 Escanea productos</div>
-  <div class="card">🧪 Aditivos ocultos</div>
-  <div class="card">📊 Info clara</div>
-  <div class="card">⚡ Decide mejor</div>
+
+  <div class="card">
+    <strong>📦 Escanea productos</strong><br><br>
+    Solo apunta el código de barras
+  </div>
+
+  <div class="card">
+    <strong>🧪 Aditivos ocultos</strong><br><br>
+    Descubre lo que no ves
+  </div>
+
+  <div class="card">
+    <strong>📊 Información clara</strong><br><br>
+    Sin letra chica ni confusión
+  </div>
+
+  <div class="card">
+    <strong>⚡ Decide mejor</strong><br><br>
+    En segundos
+  </div>
+
 </div>
 
+<!-- FINAL -->
 <div class="final">
-  <h2>Descarga Zanai hoy</h2>
-  <a href="#" class="cta">Probar ahora 🚀</a>
+  <h2>Empieza a entender lo que comes</h2>
+
+  <a href="https://play.google.com/store/apps/details?id=com.goespinoza.nutriapp" class="cta">
+    Descargar ahora 🚀
+  </a>
 </div>
 
+<!-- FOOTER -->
 <footer>
   © Zanai 2026
 </footer>
