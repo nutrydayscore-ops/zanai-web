@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zanai</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+:root {
+  --green: #93d536;
+  --green-dark: #1d7c3f;
+  --border: #e5e7eb;
+  --text: #111827;
+  --muted: #6b7280;
+}
+
+body {
+  margin:0;
+  font-family:'Montserrat', sans-serif;
+  background:#ffffff;
+  color:var(--text);
+}
+
+nav {
+  display:flex;
+  justify-content:space-between;
+  padding:20px 40px;
+  border-bottom:1px solid var(--border);
+}
+
+.logo {
+  width:70px;
+}
+
+.hero {
+  text-align:center;
+  padding:100px 20px;
+}
+
+h1 {
+  font-size:clamp(40px,6vw,70px);
+  font-weight:800;
+}
+
+.sub {
+  margin-top:20px;
+  color:var(--muted);
+}
+
+.cta {
+  margin-top:30px;
+  display:inline-block;
+  padding:16px 30px;
+  border-radius:14px;
+  background:linear-gradient(135deg,#93D536,#7fc22d);
+  text-decoration:none;
+  color:#1a1a1a;
+  font-weight:700;
+}
+
+.strip {
+  background:#f8fafc;
+  text-align:center;
+  padding:20px;
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+}
+
+.features {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:20px;
+  padding:80px 20px;
+  max-width:1000px;
+  margin:auto;
+}
+
+.card {
+  border:1px solid var(--border);
+  padding:25px;
+  border-radius:16px;
+  background:white;
+  box-shadow:0 10px 30px rgba(0,0,0,0.05);
+  transition:0.3s;
+}
+
+.card:hover {
+  transform:translateY(-5px);
+  box-shadow:0 20px 50px rgba(0,0,0,0.1);
+}
+
+.final {
+  text-align:center;
+  padding:100px 20px;
+}
+
+.final h2 {
+  font-size:40px;
+}
+
+footer {
+  text-align:center;
+  padding:30px;
+  color:var(--muted);
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+  <img src="logo.png" class="logo">
+</nav>
+
+<div class="hero">
+  <h1>Entiende lo que comes 🧠</h1>
+  <p class="sub">Escanea productos y descubre sus aditivos e información nutricional en segundos</p>
+  <a href="#" class="cta">Descargar app 🚀</a>
+</div>
+
+<div class="strip">
+  Solo escaneando el código de barras ves TODO lo que contiene un producto
+</div>
+
+<div class="features">
+  <div class="card">📦 Escanea productos</div>
+  <div class="card">🧪 Aditivos ocultos</div>
+  <div class="card">📊 Info clara</div>
+  <div class="card">⚡ Decide mejor</div>
+</div>
+
+<div class="final">
+  <h2>Descarga Zanai hoy</h2>
+  <a href="#" class="cta">Probar ahora 🚀</a>
+</div>
+
+<footer>
+  © Zanai 2026
+</footer>
+
+</body>
+</html>
