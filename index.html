@@ -1,6 +1,4 @@
-import zanaiLogo from "@/assets/zanai-logo.png";
 import { Scan, FlaskConical, BarChart3, Zap, Mail, Apple } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
 const features = [
   { icon: Scan, title: "Escanea productos", desc: "Solo apunta el código de barras" },
@@ -9,67 +7,74 @@ const features = [
   { icon: Zap, title: "Decide mejor", desc: "En segundos" },
 ];
 
-const Index = () => {
+function App() {
   return (
-    <div className="min-h-screen bg-background">
-      {/* Nav */}
-      <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-border">
-        <div className="container flex items-center justify-between h-16">
+    <div className="min-h-screen bg-white text-gray-900">
+
+      {/* NAV */}
+      <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur border-b">
+        <div className="max-w-6xl mx-auto flex items-center justify-between h-16 px-4">
           <div className="flex items-center gap-2">
-            <img src={zanaiLogo} alt="Zanai" className="h-8 w-8" />
-            <span className="font-heading font-bold text-xl text-foreground">Zanai</span>
+            <div className="w-8 h-8 bg-green-500 rounded-full"></div>
+            <span className="font-bold text-xl">Zanai</span>
           </div>
-          <Button className="rounded-full px-6 font-heading font-semibold">
+          <button className="bg-black text-white px-6 py-2 rounded-full font-semibold">
             Descargar 🚀
-          </Button>
+          </button>
         </div>
       </nav>
 
-      {/* Hero */}
-      <section className="pt-32 pb-20 px-4">
-        <div className="container max-w-4xl text-center">
-          <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 mb-8 text-sm font-medium text-primary">
+      {/* HERO */}
+      <section className="pt-32 pb-20 px-4 text-center">
+        <div className="max-w-4xl mx-auto">
+          <div className="inline-flex items-center gap-2 rounded-full bg-green-100 px-4 py-1.5 mb-8 text-sm font-medium text-green-600">
             <Apple className="w-4 h-4" /> FoodTech · Chile
           </div>
-          <h1 className="font-heading text-5xl md:text-7xl font-bold tracking-tight text-foreground leading-tight mb-6">
+
+          <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-6">
             Entiende lo que
             <br />
-            <span className="text-primary">comes 🍏</span>
+            <span className="text-green-500">comes 🍏</span>
           </h1>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10">
+
+          <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-10">
             Lo que parece sano… muchas veces no lo es 👀
             <br />
             Zanai escanea tus alimentos y te muestra la verdad detrás de cada etiqueta.
           </p>
-          <Button size="lg" className="rounded-full px-10 py-6 text-lg font-heading font-bold animate-pulse-glow">
+
+          <button className="bg-green-500 text-white px-10 py-4 rounded-full text-lg font-bold">
             Descargar ahora 🚀
-          </Button>
+          </button>
         </div>
       </section>
 
-      {/* Logo float */}
+      {/* LOGO */}
       <section className="py-12 flex justify-center">
-        <img src={zanaiLogo} alt="Zanai logo" className="w-40 h-40 md:w-56 md:h-56 animate-float drop-shadow-2xl" />
+        <div className="w-40 h-40 bg-green-500 rounded-full"></div>
       </section>
 
-      {/* Features */}
+      {/* FEATURES */}
       <section className="py-20 px-4">
-        <div className="container max-w-5xl">
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-center text-foreground mb-4">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
             ¿Cómo funciona?
           </h2>
-          <p className="text-center text-muted-foreground mb-12">Tan simple como apuntar y saber</p>
+          <p className="text-center text-gray-500 mb-12">
+            Tan simple como apuntar y saber
+          </p>
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {features.map((f, i) => (
               <div
                 key={i}
-                className="group bg-card rounded-2xl border border-border p-6 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300"
+                className="bg-white rounded-2xl border p-6 hover:shadow-lg transition"
               >
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                  <f.icon className="w-6 h-6 text-primary" />
+                <div className="w-12 h-12 rounded-xl bg-green-100 flex items-center justify-center mb-4">
+                  <f.icon className="w-6 h-6 text-green-600" />
                 </div>
-                <h3 className="font-heading font-semibold text-lg text-foreground mb-1">{f.title}</h3>
-                <p className="text-muted-foreground text-sm">{f.desc}</p>
+                <h3 className="font-semibold text-lg mb-1">{f.title}</h3>
+                <p className="text-gray-500 text-sm">{f.desc}</p>
               </div>
             ))}
           </div>
@@ -77,33 +82,37 @@ const Index = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-24 px-4">
-        <div className="container max-w-3xl text-center">
-          <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground mb-6">
+      <section className="py-24 px-4 text-center">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Empieza a entender
             <br />lo que comes
           </h2>
-          <Button size="lg" className="rounded-full px-12 py-6 text-lg font-heading font-bold animate-pulse-glow">
+
+          <button className="bg-green-500 text-white px-12 py-5 rounded-full text-lg font-bold">
             Descargar ahora 🚀
-          </Button>
+          </button>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="border-t border-border py-10 px-4">
-        <div className="container flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
+      {/* FOOTER */}
+      <footer className="border-t py-10 px-4">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-500">
           <div className="flex items-center gap-2">
-            <img src={zanaiLogo} alt="Zanai" className="h-6 w-6" />
-            <span className="font-heading font-semibold text-foreground">Zanai</span>
+            <div className="w-6 h-6 bg-green-500 rounded-full"></div>
+            <span className="font-semibold text-black">Zanai</span>
           </div>
-          <a href="mailto:contacto@zanai.cl" className="flex items-center gap-2 hover:text-primary transition-colors">
+
+          <a href="mailto:contacto@zanai.cl" className="flex items-center gap-2 hover:text-green-600">
             <Mail className="w-4 h-4" /> contacto@zanai.cl
           </a>
-          <p>© {new Date().getFullYear()} Zanai. Todos los derechos reservados.</p>
+
+          <p>© {new Date().getFullYear()} Zanai</p>
         </div>
       </footer>
+
     </div>
   );
-};
+}
 
-export default Index;
+export default App;
