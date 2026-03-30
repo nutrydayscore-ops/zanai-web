@@ -1,222 +1,109 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
+import zanaiLogo from "@/assets/zanai-logo.png";
+import { Scan, FlaskConical, BarChart3, Zap, Mail, Apple } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+const features = [
+  { icon: Scan, title: "Escanea productos", desc: "Solo apunta el código de barras" },
+  { icon: FlaskConical, title: "Aditivos ocultos", desc: "Descubre lo que no ves" },
+  { icon: BarChart3, title: "Información clara", desc: "Sin letra chica ni confusión" },
+  { icon: Zap, title: "Decide mejor", desc: "En segundos" },
+];
 
-<title>Zanai | Entiende lo que comes</title>
+const Index = () => {
+  return (
+    <div className="min-h-screen bg-background">
+      {/* Nav */}
+      <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-border">
+        <div className="container flex items-center justify-between h-16">
+          <div className="flex items-center gap-2">
+            <img src={zanaiLogo} alt="Zanai" className="h-8 w-8" />
+            <span className="font-heading font-bold text-xl text-foreground">Zanai</span>
+          </div>
+          <Button className="rounded-full px-6 font-heading font-semibold">
+            Descargar 🚀
+          </Button>
+        </div>
+      </nav>
 
-<meta name="description" content="Escanea productos y descubre aditivos, ingredientes y la verdad nutricional en segundos con Zanai.">
+      {/* Hero */}
+      <section className="pt-32 pb-20 px-4">
+        <div className="container max-w-4xl text-center">
+          <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 mb-8 text-sm font-medium text-primary">
+            <Apple className="w-4 h-4" /> FoodTech · Chile
+          </div>
+          <h1 className="font-heading text-5xl md:text-7xl font-bold tracking-tight text-foreground leading-tight mb-6">
+            Entiende lo que
+            <br />
+            <span className="text-primary">comes 🍏</span>
+          </h1>
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10">
+            Lo que parece sano… muchas veces no lo es 👀
+            <br />
+            Zanai escanea tus alimentos y te muestra la verdad detrás de cada etiqueta.
+          </p>
+          <Button size="lg" className="rounded-full px-10 py-6 text-lg font-heading font-bold animate-pulse-glow">
+            Descargar ahora 🚀
+          </Button>
+        </div>
+      </section>
 
-<!-- Open Graph (para compartir) -->
-<meta property="og:title" content="Zanai | Entiende lo que comes">
-<meta property="og:description" content="Descubre lo que realmente estás comiendo en segundos.">
-<meta property="og:image" content="logo.png">
-<meta property="og:type" content="website">
+      {/* Logo float */}
+      <section className="py-12 flex justify-center">
+        <img src={zanaiLogo} alt="Zanai logo" className="w-40 h-40 md:w-56 md:h-56 animate-float drop-shadow-2xl" />
+      </section>
 
-<!-- Font -->
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+      {/* Features */}
+      <section className="py-20 px-4">
+        <div className="container max-w-5xl">
+          <h2 className="font-heading text-3xl md:text-4xl font-bold text-center text-foreground mb-4">
+            ¿Cómo funciona?
+          </h2>
+          <p className="text-center text-muted-foreground mb-12">Tan simple como apuntar y saber</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {features.map((f, i) => (
+              <div
+                key={i}
+                className="group bg-card rounded-2xl border border-border p-6 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300"
+              >
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                  <f.icon className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="font-heading font-semibold text-lg text-foreground mb-1">{f.title}</h3>
+                <p className="text-muted-foreground text-sm">{f.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-<style>
+      {/* CTA */}
+      <section className="py-24 px-4">
+        <div className="container max-w-3xl text-center">
+          <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground mb-6">
+            Empieza a entender
+            <br />lo que comes
+          </h2>
+          <Button size="lg" className="rounded-full px-12 py-6 text-lg font-heading font-bold animate-pulse-glow">
+            Descargar ahora 🚀
+          </Button>
+        </div>
+      </section>
 
-:root {
-  --green: #93d536;
-  --green-dark: #1d7c3f;
-  --border: #e5e7eb;
-  --text: #111827;
-  --muted: #6b7280;
-}
+      {/* Footer */}
+      <footer className="border-t border-border py-10 px-4">
+        <div className="container flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
+          <div className="flex items-center gap-2">
+            <img src={zanaiLogo} alt="Zanai" className="h-6 w-6" />
+            <span className="font-heading font-semibold text-foreground">Zanai</span>
+          </div>
+          <a href="mailto:contacto@zanai.cl" className="flex items-center gap-2 hover:text-primary transition-colors">
+            <Mail className="w-4 h-4" /> contacto@zanai.cl
+          </a>
+          <p>© {new Date().getFullYear()} Zanai. Todos los derechos reservados.</p>
+        </div>
+      </footer>
+    </div>
+  );
+};
 
-body {
-  margin:0;
-  font-family:'Montserrat', sans-serif;
-  background:#ffffff;
-  color:var(--text);
-}
-
-/* NAV */
-nav {
-  display:flex;
-  justify-content:center;
-  padding:25px;
-  border-bottom:1px solid var(--border);
-}
-
-.logo {
-  width:110px;
-}
-
-/* HERO */
-.hero {
-  text-align:center;
-  padding:90px 20px 60px;
-}
-
-h1 {
-  font-size:clamp(42px,6vw,72px);
-  font-weight:800;
-  letter-spacing:-1px;
-}
-
-.sub {
-  margin-top:20px;
-  color:var(--muted);
-  font-size:18px;
-  max-width:520px;
-  margin-left:auto;
-  margin-right:auto;
-}
-
-.cta {
-  margin-top:30px;
-  display:inline-block;
-  padding:16px 32px;
-  border-radius:14px;
-  background:linear-gradient(135deg,#93D536,#7fc22d);
-  text-decoration:none;
-  color:#1a1a1a;
-  font-weight:700;
-  box-shadow:0 10px 25px rgba(147,213,54,0.3);
-  transition:0.25s;
-}
-
-.cta:hover {
-  transform:translateY(-3px);
-  box-shadow:0 20px 40px rgba(147,213,54,0.35);
-}
-
-.note {
-  margin-top:10px;
-  color:var(--muted);
-  font-size:13px;
-}
-
-/* IMPACT */
-.impact {
-  text-align:center;
-  padding:70px 20px;
-  background:#f8fafc;
-}
-
-.impact h2 {
-  font-size:30px;
-}
-
-/* FEATURES */
-.features {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:20px;
-  padding:80px 20px;
-  max-width:1000px;
-  margin:auto;
-}
-
-.card {
-  border:1px solid var(--border);
-  padding:25px;
-  border-radius:16px;
-  background:white;
-  box-shadow:0 10px 30px rgba(0,0,0,0.05);
-  transition:0.3s;
-}
-
-.card:hover {
-  transform:translateY(-6px);
-  box-shadow:0 20px 50px rgba(0,0,0,0.1);
-  border-color:#93d536;
-}
-
-/* FINAL CTA */
-.final {
-  text-align:center;
-  padding:100px 20px;
-}
-
-.final h2 {
-  font-size:36px;
-}
-
-/* FOOTER */
-footer {
-  text-align:center;
-  padding:30px;
-  color:var(--muted);
-}
-
-</style>
-
-</head>
-
-<body>
-
-<!-- NAV -->
-<nav>
-  <img src="logo.png" class="logo" alt="Zanai logo">
-</nav>
-
-<!-- HERO -->
-<div class="hero">
-  <h1>Entiende lo que comes 🧠</h1>
-
-  <p class="sub">
-    Escanea productos y descubre aditivos, ingredientes y la verdad nutricional en segundos.
-  </p>
-
-  <a href="https://play.google.com/store/apps/details?id=com.goespinoza.nutriapp" class="cta">
-    Descargar en Android 🚀
-  </a>
-
-  <div class="note">Disponible en Android</div>
-</div>
-
-<!-- IMPACT -->
-<div class="impact">
-  <h2>
-    Lo que parece sano…<br>
-    muchas veces no lo es 👀
-  </h2>
-</div>
-
-<!-- FEATURES -->
-<div class="features">
-
-  <div class="card">
-    <strong>📦 Escanea productos</strong><br><br>
-    Solo apunta el código de barras
-  </div>
-
-  <div class="card">
-    <strong>🧪 Aditivos ocultos</strong><br><br>
-    Descubre lo que no ves
-  </div>
-
-  <div class="card">
-    <strong>📊 Información clara</strong><br><br>
-    Sin letra chica ni confusión
-  </div>
-
-  <div class="card">
-    <strong>⚡ Decide mejor</strong><br><br>
-    En segundos
-  </div>
-
-</div>
-
-<!-- FINAL -->
-<div class="final">
-  <h2>Empieza a entender lo que comes</h2>
-
-  <a href="https://play.google.com/store/apps/details?id=com.goespinoza.nutriapp" class="cta">
-    Descargar ahora 🚀
-  </a>
-</div>
-
-<!-- FOOTER -->
-<footer>
-  © Zanai 2026
-</footer>
-
-</body>
-</html>
+export default Index;
